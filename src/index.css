@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply font-sans antialiased;
+    overscroll-behavior-y: none;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+  .glass-light {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40;
+  }
+  .glass-card {
+    @apply bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/15 dark:border-white/10 rounded-3xl;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-2xl shadow-lg shadow-cyan-500/25 active:scale-95 transition-all;
+  }
+  .btn-ghost {
+    @apply bg-white/10 dark:bg-white/5 backdrop-blur border border-white/15 dark:border-white/10 rounded-2xl active:scale-95 transition-all;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 0; height: 0; }
+
+/* Hide scrollbar but keep scroll */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Timer ring */
+.timer-ring {
+  transform: rotate(-90deg);
+}
